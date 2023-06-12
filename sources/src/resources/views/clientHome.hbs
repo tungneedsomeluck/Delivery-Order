@@ -1,0 +1,148 @@
+{{!-- Header --}}
+<div id="header" class="position-fixed top-0 w-100 bg-light">
+    <div class="container" style="max-width:1200px ;">
+        <!-- nav bar -->
+        <nav class="navbar navbar-expand-lg hei-88">
+            <div class="container-fluid px-0">
+                <a class="navbar-brand logo  py-0" href="/client">ABC Delivery</a>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li> -->
+
+                    </ul>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-outline-success ti-car" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#followOrder" aria-controls="offcanvasRight">
+                        </button>
+                        <button class="btn btn-outline-success ti-shopping-cart" type="button"
+                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        </button>
+
+                        {{#Logout}}
+                        <form class="d-flex" method="post" action="/client/login">
+                            <button class="btn btn-outline-success" type="submit" name="submitButton"
+                                value="temp">Logout</button>
+                        </form>
+                        {{/Logout}}
+                        {{#Login}}
+                        <a class="btn btn-outline-success" type="submit" href="/client/login">Login/ Sign up</a>
+                        {{/Login}}
+
+                    </div>
+
+                </div>
+
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Main -->
+<div id="main" class="">
+
+    <div class="container" style="max-width:1200px; 
+                                min-height: 450px;
+                                margin-bottom: 32px;
+                                margin-top: 120px;">
+        <!-- Thanh search -->
+        <div class="search mt-4 mb-4">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success ti-search" type="submit"></button>
+            </form>
+        </div>
+        <!-- start list-items -->
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            {{#each Branches}}
+            <div class="col ">
+                <div class="card h-100">
+                    <a href="/client/restaurant/{{ID_Branches}}">
+                        <img src="./img/food.jpeg" class="card-img-top" alt="...">
+                    </a>
+
+                    <div class="card-body">
+                        <a href="/client/restaurant/{{ID_Branches}}">
+                            <h5 class="card-title">{{Name}}</h5>
+                        </a>
+                        <p class="card-text">{{Food_Type}}</p>
+                        <div class="d-flex">
+                            <p class="card-text mb-0">{{Total_OrdersPerDay}}</p>
+                            <p class="card-text mx-2">Đơn/ngày</p>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <p class="card-text mb-0 bg-warning badge">{{Status}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <!-- end list-items -->
+
+    </div>
+
+</div>
+
+<div class="cart">
+    <div class="offcanvas offcanvas-end mt-0 px-0 w-516px" data-bs-scroll="false" data-bs-backdrop="true" tabindex="-1"
+        id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header border-bottom-custom pa-24">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h5 class="offcanvas-title d-flex flex-grow-1 justify-content-center" id="offcanvasRightLabel">My Cart</h5>
+
+        </div>
+        <div class="offcanvas-body p-0">
+            <div class="pa-24">Please choose Restaurant and add food to card</div>
+        </div>
+    </div>
+</div>
+<div class="order">
+    <div class="offcanvas offcanvas-end mt-0 px-0 w-516px" data-bs-scroll="false" data-bs-backdrop="true" tabindex="-1"
+        id="followOrder" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header border-bottom-custom pa-24">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h5 class="offcanvas-title d-flex flex-grow-1 justify-content-center" id="offcanvasRightLabel">My Orders
+            </h5>
+
+        </div>
+        <div class="offcanvas-body p-0">
+            <ol class="list-group list-group-numbered">
+                {{#each allOrder}}
+                <form>
+                    <div>
+                        <input type="text" name="type" value="delete" style="display: none;">
+                        <input type="text" name="ID_Order" value="{{ID_Order}}" style="display: none;">
+                    </div>
+                    <li class="list-group-item d-flex justify-content-between align-items-start "
+                        data-bs-toggle="modal">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">{{Name}}</div>
+                            <div>{{Product_fees}}</div>
+                        </div>
+                        <span class="badge bg-warning rounded-pill">{{Status}}</span>
+                        <div class="d-flex justify-content-end ms-3">
+                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                        </div>
+                    </li>
+                </form>
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer  -->
+<div id="footer" class=" pt-3 pb-5 mb-0 position-absolute w-100" style="bottom: 0;">
+    <div class="container" style="max-width:1200px ;">
+        <div class="logo text-light">ABC Delivery</div>
+        <div class="d-flex justify-content-center fs-2">
+            <div class="ti-youtube px-2"></div>
+            <div class="ti-instagram px-2"></div>
+            <div class="ti-twitter-alt px-2"></div>
+            <div class="ti-pinterest px-2"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,121 @@
+{{!-- header --}}
+<div id="header" class="position-fixed top-0 w-100 bg-light">
+    <div class="container" style="max-width:1200px ;">
+        <!-- nav bar -->
+        <nav class="navbar navbar-expand-lg hei-88">
+            <div class="container-fluid px-0">
+                <a class="navbar-brand logo  py-0" href="/">ABC Delivery</a>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li> -->
+
+                    </ul>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a class="btn btn-outline-success" type="submit" href="/partner">Login/ Sign up</a>
+                        <button class="btn btn-outline-success ti-shopping-cart" type="submit"></button>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+{{!-- end header --}}
+<img src="/img/imgtest2.jpg" alt="" style="
+        width: 100%; 
+        position:absolute; 
+        z-index: 0;
+        object-fit: cover;
+        height: 1063px;
+        ">
+<div class="container d-flex justify-content-flex-end" style="max-width:1200px; position:relative; margin-top: 88px">
+    <div class="col-12 d-flex justify-content-end">
+        <div class="col-5 mt-5 mb-5 p-5 box-shadow" style="padding: 20px !important; background-color: #fff">
+            <!-- Pills content -->
+            <div class="tab-content">
+                
+                <div class="tab-pane fade  show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+                    <div class="partner-form-header">Trở thành Nhà hàng Đối tác cùng ABC Delivery</div>
+                    <p style="">Điền vào thông tin theo mẫu sau. Lưu ý, ABC sẽ thu 
+                        (i) Phí Hỗ Trợ Thương Nhân Mới là 1 triệu đồng đối 
+                        với mỗi Thương Nhân ABCFood tại khu vực TP. Hồ Chí 
+                        Minh và TP. Hà Nội đăng ký mới, kể từ ngày 23/02/2021 
+                        (gọi tắt là “Phí Hỗ Trợ Thương Nhân Mới”) và (ii) phí 
+                        hoa hồng trên doanh số bán ra của Thương Nhân theo tỷ 
+                        lệ quy định tại hợp đồng dịch vụ thương mại điện tử giữa 
+                        ABC và Thương Nhân (gọi tắt là “Phí Dịch Vụ”).</p>
+                    <form>
+                        <div class="form-outline mb-4 mab ">
+                            <input type="text" name="Name_Branches" class="form-control partner-form-input " placeholder="Tên nhà hàng/Quán ăn" required/>
+                        </div>
+                        <div class="form-outline mb-4 mab ">
+                            <input type="text" name="Deputy" class="form-control partner-form-input " placeholder="Người đại diện" required/>
+                        </div>
+                        <div class="row mb-0">
+                            <div class="col-md-6 d-flex justify-content-start form-outline pe-1">
+                               <input type="text" name="City" class="form-control partner-form-input " placeholder="Thành phố" required/>
+                            </div>
+                             <div class="col-md-6 d-flex justify-content-start form-outline ps-1">
+                               <input type="text" name="District" class="form-control partner-form-input " placeholder="Quận" required/>
+                            </div>
+                        </div>
+                        <div class="row mb-0">
+                            <div class="col-md-6 d-flex justify-content-start form-outline pe-1">
+                               <input type="text" name="Total_Branches" class="form-control partner-form-input " placeholder="Số lượng chi nhánh" required/>
+                            </div>
+                             <div class="col-md-6 d-flex justify-content-start form-outline ps-1">
+                               <input type="text" name="Total_OrderPerDays" class="form-control partner-form-input " placeholder="Số lượng đơn hàng" required/>
+                            </div>
+                        </div>
+                        <div class="form-outline mb-4 mab ">
+                            <input type="text" name="Cuisine" class="form-control partner-form-input " placeholder="Cuisine" required/>
+                        </div>
+                        <div class="form-outline mb-4 mab ">
+                            <input type="text" name="Address" class="form-control partner-form-input " placeholder="Địa chỉ kinh doanh" required/>
+                        </div>
+                         <div class="form-outline mb-4 mab ">
+                            <input type="text" name="Phone" class="form-control partner-form-input"  placeholder="Số điện thoại" required/>
+                        </div>
+                        <div class="form-outline mb-4 mab ">
+                            <input type="text" name="Email" class="form-control partner-form-input"  placeholder="Email" required/>
+                        </div>
+                        <!-- 2 column grid layout -->
+                        <div class="row mb-4">
+                            <div class="col-md-12 d-flex justify-content-start">
+                                <!-- Checkbox -->
+                                <div class="form-check mb-3 mb-md-0">
+                                    <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
+                                    <label class="form-check-label" for="loginCheck"> 
+                                        Bằng cách tiếp tục, tôi đồng ý rằng ABC  
+                                        có thể thu thập, sử dụng và tiết lộ thông 
+                                        tin do tôi cung cấp, thay mặt cho công ty 
+                                        đăng ký, theo Thông báo Bảo mật của ABC 
+                                        mà tôi đã đọc và hiểu. </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-outline-success btn-block mb-4 w-100">SUBMIT</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer  -->
+<div id="footer" class=" pt-3 pb-5 mb-0 position-absolute w-100" style="bottom: 0;">
+    <div class="container" style="max-width:1200px ;">
+        <div class="logo text-light">ABC Delivery</div>
+        <div class="d-flex justify-content-center fs-2">
+            <div class="ti-youtube px-2"></div>
+            <div class="ti-instagram px-2"></div>
+            <div class="ti-twitter-alt px-2"></div>
+            <div class="ti-pinterest px-2"></div>
+        </div>
+    </div>
+</div>

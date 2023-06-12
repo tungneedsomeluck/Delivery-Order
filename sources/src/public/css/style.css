@@ -1,0 +1,173 @@
+.body {
+    margin: 0;
+}
+
+#header {
+    z-index: 1;
+    box-shadow: 0 3px 6px rgb(28 28 28 / 10%);
+    background-color: #fff!important;
+}
+
+a {
+    text-decoration: none;
+    color: #198754;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #069d3a;
+}
+
+.clear {
+    clear: both;
+}
+
+.a-color {
+    color: #198754;
+    text-decoration: none;
+}
+
+.a-color:hover {
+    color: #198754;
+    text-decoration: underline;
+}
+
+.mab{
+    margin-bottom: 8px !important;
+}
+
+.pat-24{
+    padding-top: 24px;
+}
+
+.pab-24{
+    padding-bottom: 24px;
+}
+
+.box-shadow {
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    border-radius: 8px;
+}
+
+.hei-88 {
+    height: 88px;
+}
+
+.logo {
+    color: #198754;
+    font-weight: bold;
+    font-size: 26px;
+    
+}
+
+#main {
+  
+}
+
+#footer {
+    background-color: #198754;
+    
+}
+
+.form-check-input:checked {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.form-check-input:focus {
+    border-color: #27bb76;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+
+.partner-form-header {
+    text-align: left;
+    margin-bottom: 12px;
+    font-size: 2em;
+    color: #069d3a;
+    font-family: 'Sanomat Grab Web', sans-serif;
+    font-weight: lighter !important;
+    margin-top: 0;
+    line-height: 1.2em;
+}
+
+.partner-form-input {
+    font-size: 1em;
+    height: 3em;
+    border-radius: 3px;
+    border: 1px solid #ebebeb;
+    padding: 0.5em 1em;
+    margin-bottom: 0.5em;
+    float: left;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.hover-success:hover{
+    border-color: #198754;
+}
+
+.box-custom {
+    border-top: 8px solid #f7f7f7;
+    padding: 24px;
+}
+
+.box-custom-2 {
+    border-top: 0;
+    padding: 0 24px;
+}
+.box-custom-3 {
+    position: absolute;
+    padding: 24px;
+    background: #fff;
+    box-shadow: 0 -2px 6px 0 rgb(28 28 28 / 6%);
+    bottom: 0;
+}
+
+.border-bottom-custom {
+    border-bottom: 1px solid #f7f7f7!important;
+}
+
+.border-bottom-custom-2 {
+    border-bottom: 1px solid #ccc!important;
+}
+
+.pa-24 {
+    padding: 24px;
+}
+
+.h-48 {
+    height: 48px;
+}
+
+.w-80px {
+    width: 80px;
+}
+
+.w-516px {
+    width: 516px!important;
+}
+.px-custom {
+    padding-left: 90px!important;
+    padding-right: 90px!important;
+}
+
+.offcanvas-backdrop {
+    margin-top: 0;
+}
+
+.input-to-h5 {
+    border: none;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.border-none {
+    border: none;
+}
+
+
+

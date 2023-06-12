@@ -1,0 +1,167 @@
+{{!-- Header --}}
+<div id="header" class="position-fixed top-0 w-100 bg-light">
+    <div class="container" style="max-width:1200px ;">
+        <!-- nav bar -->
+        <nav class="navbar navbar-expand-lg hei-88">
+            <div class="container-fluid px-0">
+                <a class="navbar-brand logo  py-0" href="/client">ABC Delivery</a>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li> -->
+
+                    </ul>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-outline-success ti-shopping-cart" type="button"
+                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        </button>
+                        {{#Logout}}
+                        <form class="d-flex" method="post" action="/client/login">
+                            <button class="btn btn-outline-success" type="submit" name="submitButton"
+                                value="temp">Logout</button>
+                        </form>
+                        {{/Logout}}
+                        {{#Login}}
+                        <a class="btn btn-outline-success" type="submit" href="/client/login">Login/ Sign up</a>
+                        {{/Login}}
+
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Main -->
+<div id="main" class="">
+
+    <div class="container" style="max-width:1200px; 
+                                min-height: 450px;
+                                margin-bottom: 32px;
+                                margin-top: 120px;">
+        {{#Branches}}
+        <div>
+            <h2 class="text-capitalize" style="font-size: 2.57142857rem;
+            line-height: 1.33333333;
+            font-weight: 500;
+            margin-bottom: 40px;">
+                {{Name}}</h2>
+            
+        </div>
+        {{/Branches}}
+        <!-- start list-items -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {{#each Menu}}
+            <div class="col">
+                <div type="button" data-bs-toggle="offcanvas" data-bs-target="#{{idFood}}" aria-controls="{{idFood}}">
+                    <div class="card h-100 hover-success cursor-pointer">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-4">{{Food_Name}}</h5>
+                            <div class="d-flex justify-content-between mt-1">
+                                <p class="card-text">{{Price}}</p>
+                                <div class="d-flex flex-column justify-content-end">
+                                    <div class="ti-plus text-white bg-success p-2 rounded fw-bolder"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {{!-- col modal --}}
+            <div class="offcanvas offcanvas-end mt-0 px-0 w-516px" data-bs-scroll="false" data-bs-backdrop="true"
+                tabindex="-1" id={{idFood}} aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header border-bottom-custom pa-24">
+                    <button type="button" class="btn-close ps-0" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body p-0">
+                    <form>
+                        <div class="pa-24 d-flex justify-content-between align-items-center">
+                            <input class="offcanvas-title input-to-h5" id="offcanvasRightLabel" name="Food_name"
+                                value='{{Food_Name}}' readonly />
+                            <h5 class="card-text">{{Price}}</h5>
+                        </div>
+                        <div class="box-custom d-flex  justify-content-between align-items-center">
+                            <div class="form-outline w-100">
+                                <label class="form-label">Options</label>
+                                <input id="FoodsOptions" type="text" name="FoodsOptions" class="form-control w-100" />
+                                <label class="form-label mt-3">Quantity</label>
+                                <input id="FoodsQuantity" type="number" value="1" min="1" name="FoodsQuantity"
+                                    class="form-control w-100" />
+                            </div>
+                        </div>
+                        <div class="box-custom-3 w-100 d-flex justify-content-between">
+                            <button class="btn btn-success fw-bold px-custom h-48 w-100" data-bs-dismiss="offcanvas"
+                                onclick={handleAddToCard('{{idFood}}')}>Add to Card</button>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+            {{/each}}
+
+
+        </div>
+        <!-- end list-items -->
+    </div>
+</div>
+<div class="cart">
+    <div class="offcanvas offcanvas-end mt-0 px-0 w-516px" data-bs-scroll="false" data-bs-backdrop="true" tabindex="-1"
+        id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header border-bottom-custom pa-24">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h5 class="offcanvas-title d-flex flex-grow-1 justify-content-center" id="offcanvasRightLabel">My Cart</h5>
+
+        </div>
+        <div class="offcanvas-body p-0">
+
+            <div class="box-custom d-flex flex-column">
+                {{!-- <div>Mì xào hải sản</div>
+                <div>25.000</div>
+                <div>1</div> --}}
+
+                <ol class="list-group list-group-numbered w-100">
+                    {{#each Card}}
+                    <li class="list-group-item d-flex justify-content-between
+                         align-items-start border-none p-0 mb-3 ">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">{{Food_Name}}</div>
+                             <div class="fw-bold">{{Optional}}</div>
+                            {{Price}}
+                        </div>
+                        <span class="badge bg-info rounded-pill">{{Quantity}}</span>
+                    </li>
+                    {{/each}}
+                </ol>
+
+            </div>
+            
+            <div class="box-custom-3 w-100 d-flex justify-content-between">
+                <a class="btn btn-success fw-bold px-custom h-48 w-100"
+                href="/client/restaurant/payment">Payment</a>
+            </div>
+
+           
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer  -->
+<div id="footer" class=" pt-3 pb-5 mb-0 position-absolute w-100" style="bottom: 0;">
+    <div class="container" style="max-width:1200px ;">
+        <div class="logo text-light">ABC Delivery</div>
+        <div class="d-flex justify-content-center fs-2">
+            <div class="ti-youtube px-2"></div>
+            <div class="ti-instagram px-2"></div>
+            <div class="ti-twitter-alt px-2"></div>
+            <div class="ti-pinterest px-2"></div>
+        </div>
+    </div>
+</div>
